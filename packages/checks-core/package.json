@@ -12,6 +12,6 @@
     "lint": "tsc -p tsconfig.json --noEmit"
   },
   "devDependencies": {
-    "vitest": "^3.2.4"
+    "vitest": "^3.2.6"
   }
 }

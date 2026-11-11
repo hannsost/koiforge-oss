@@ -27,7 +27,7 @@
     "@koiforge/security-core": "workspace:*",
     "@koiforge/semantic-crosswalk-core": "workspace:*",
     "@koiforge/semantic-discovery-core": "workspace:*",
-    "fastify": "^5.6.1"
+    "fastify": "^5.12.5"
   },
   "devDependencies": {
     "tsx": "^4.20.6"
