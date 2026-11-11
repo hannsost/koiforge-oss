@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="85.462044mm"
+   height="28.823547mm"
+   viewBox="0 0 85.462044 28.823547"
+   version="1.1"
+   id="svg1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <g
+     id="layer1"
+     transform="translate(-26.722915,-72.231248)">
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:31.0444px;font-family:'Noto Sans Hebrew';-inkscape-font-specification:'Noto Sans Hebrew Bold';text-align:start;letter-spacing:-2.39941px;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#0000ff;fill-opacity:1;stroke-width:0.489679;-inkscape-stroke:none"
+       x="38.881317"
+       y="94.703423"
+       id="text6-2"><tspan
+         id="tspan6-0"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:31.0444px;font-family:'Lucida Sans Unicode';-inkscape-font-specification:'Lucida Sans Unicode Bold';fill:#000000;stroke-width:0.489679"
+         x="38.881317"
+         y="94.703423">Forge</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:15.6051px;font-family:'Noto Sans Hebrew';-inkscape-font-specification:'Noto Sans Hebrew Bold';text-align:start;letter-spacing:-0.743014px;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;fill-opacity:1;stroke-width:0.151641;-inkscape-stroke:none"
+       x="-95.967705"
+       y="37.832405"
+       id="text7-9"
+       transform="rotate(-90)"><tspan
+         id="tspan7-7"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15.6051px;font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI Bold';fill:#000000;stroke-width:0.151641"
+         x="-95.967705"
+         y="37.832405"
+         dx="0 0 0"><tspan
+   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI Bold';letter-spacing:-0.742334px;fill:#000000;stroke-width:0.151641"
+   id="tspan8-3"
+   dx="0">KO</tspan>I</tspan></text>
+  </g>
+</svg>

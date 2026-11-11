@@ -1,0 +1,38 @@
+node_modules/
+dist/
+.turbo/
+.pnpm-store/
+coverage/
+.vite/
+*.tsbuildinfo
+apps/control-plane-api/data/
+.koiforge/
+.koiforge-state-*.lock
+packages/e2e-tests/test-results-freshness/
+packages/e2e-tests/test-results/
+packages/e2e-tests/playwright-report/
+
+# --- secrets & local env (added for OSS release) ---
+.env
+.env.*
+!.env.example
+!**/.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+kubeconfig*
+*.kubeconfig
+secrets/
+*.sqlite
+*.sqlite3
+*.db
+*.dump
+# --- build output ---
+playwright-report/
+test-results/
+# --- editors / OS ---
+.DS_Store
+.idea/
+.vscode/
+*.swp

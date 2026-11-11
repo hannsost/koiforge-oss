@@ -1,0 +1,26 @@
+{
+  "name": "@koiforge/resilience-lab",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "run": "tsx src/cli.ts",
+    "list": "tsx src/cli.ts --list",
+    "test": "vitest run",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@koiforge/data-registry": "workspace:*"
+  },
+  "devDependencies": {
+    "tsx": "^4.20.6",
+    "vitest": "^3.2.4"
+  }
+}
+

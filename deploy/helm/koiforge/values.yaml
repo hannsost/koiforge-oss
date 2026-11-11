@@ -1,0 +1,85 @@
+image:
+  repository: registry.example.invalid/koiforge
+  tag: "0.1.0"
+  digest: ""
+  pullPolicy: IfNotPresent
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+# Exact public HTTPS origin, with no path or trailing slash.
+publicOrigin: ""
+
+# For first setup only. Create this Secret out of band, then remove this value
+# with a Helm upgrade after the owner account has been created.
+bootstrap:
+  existingSecret: ""
+  key: token
+
+serviceAccount:
+  create: true
+  name: ""
+  annotations: {}
+
+podAnnotations: {}
+podLabels: {}
+
+persistence:
+  existingClaim: ""
+  storageClass: ""
+  accessModes:
+    - ReadWriteOnce
+  size: 20Gi
+  retainOnDelete: true
+
+service:
+  port: 80
+
+ingress:
+  enabled: false
+  className: ""
+  annotations: {}
+  host: ""
+  path: /
+  pathType: Prefix
+  tls:
+    secretName: ""
+
+apiResources:
+  requests:
+    cpu: 200m
+    memory: 256Mi
+  limits:
+    cpu: "1"
+    memory: 1Gi
+
+webResources:
+  requests:
+    cpu: 20m
+    memory: 32Mi
+  limits:
+    cpu: 200m
+    memory: 128Mi
+
+nodeSelector: {}
+tolerations: []
+affinity: {}
+
+monitoring:
+  prometheusUrl: ""
+  gitlabQueue:
+    # Explicit private project paths; server-only read_api credential.
+    projects: []
+    existingSecret: ""
+    tokenKey: token
+
+oidc:
+  enabled: false
+  issuer: ""
+  clientId: ""
+  backchannelOrigin: ""
+  adminRole: platform-admin
+  label: NeuroFunken SSO
+
+terminationGracePeriodSeconds: 30

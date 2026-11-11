@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>KoiForge · Neurofunken</title>
+    <style>
+      .kf-bootstrap { box-sizing: border-box; display: grid; min-height: calc(100vh - 16px); place-items: center; padding: 24px; color: #1b352b; background: #f7f7f0; font: 16px/1.5 system-ui, sans-serif; }
+      .kf-bootstrap-card { box-sizing: border-box; width: 100%; max-width: 480px; padding: 28px; border: 1px solid #dedfd5; border-radius: 12px; background: #fff; overflow-wrap: anywhere; }
+      .kf-bootstrap-brand { margin: 0 0 20px; color: #606960; font-size: 14px; }
+      .kf-bootstrap h1 { margin: 0 0 12px; font-size: 24px; line-height: 1.35; }
+      .kf-bootstrap-message { margin: 0; }
+      .kf-bootstrap button { min-height: 44px; margin-top: 20px; padding: 10px 16px; border: 1px solid #173f31; border-radius: 8px; color: #fff; background: #173f31; font: inherit; font-weight: 600; cursor: pointer; }
+      .kf-bootstrap button:focus-visible { outline: 3px solid #a64224; outline-offset: 3px; }
+      .kf-bootstrap [hidden] { display: none; }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <main id="koiforge-bootstrap" class="kf-bootstrap" data-testid="bootstrap-status" aria-labelledby="koiforge-bootstrap-heading">
+        <section class="kf-bootstrap-card">
+          <p class="kf-bootstrap-brand">KoiForge · von neurofunken</p>
+          <h1 id="koiforge-bootstrap-heading">KoiForge wird geladen</h1>
+          <p id="koiforge-bootstrap-message" class="kf-bootstrap-message" role="status">Dein Arbeitsbereich wird vorbereitet.</p>
+          <button id="koiforge-bootstrap-reload" data-testid="bootstrap-reload" type="button" hidden>Neu laden</button>
+          <noscript><p>Für KoiForge muss JavaScript aktiviert sein. Aktiviere JavaScript und lade diese Seite erneut.</p></noscript>
+        </section>
+      </main>
+    </div>
+    <script>
+      (() => {
+        const root = document.getElementById('root');
+        const fallback = document.getElementById('koiforge-bootstrap');
+        const heading = document.getElementById('koiforge-bootstrap-heading');
+        const message = document.getElementById('koiforge-bootstrap-message');
+        const reload = document.getElementById('koiforge-bootstrap-reload');
+        const showError = (event) => {
+          if (!fallback.isConnected) return;
+          const target = event.target;
+          if (!(event instanceof ErrorEvent) && !(target instanceof HTMLScriptElement)
+            && !(target instanceof HTMLLinkElement && target.rel === 'stylesheet')) return;
+          fallback.dataset.state = 'error';
+          heading.textContent = 'KoiForge konnte nicht geladen werden';
+          message.setAttribute('role', 'alert');
+          message.textContent = 'Die Verbindung wurde unterbrochen oder eine benötigte Datei konnte nicht geladen werden. Lade diese Seite erneut. Deine aktuelle Adresse bleibt erhalten.';
+          reload.hidden = false;
+        };
+        reload.addEventListener('click', () => window.location.reload());
+        window.addEventListener('error', showError, true);
+        const observer = new MutationObserver(() => {
+          if (!fallback.isConnected) {
+            window.removeEventListener('error', showError, true);
+            observer.disconnect();
+          }
+        });
+        observer.observe(root, { childList: true });
+      })();
+    </script>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

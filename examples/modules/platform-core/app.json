@@ -1,0 +1,14 @@
+{
+  "id": "platform-core",
+  "name": "Platform Core",
+  "description": "Generische Plattformobjekte: Events und Metriken. Wird als Demo-Sandbox-App mitgeliefert und dient als Vorlage für eigene Apps.",
+  "category": "sandbox",
+  "icon": "🧩",
+  "version": "1.0.0",
+  "author": "KOIForge Contributors",
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/koiforge/koiforge",
+  "tags": ["platform", "events", "metrics", "demo"],
+  "moduleFile": "module.yaml",
+  "requires": []
+}

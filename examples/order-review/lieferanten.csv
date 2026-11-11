@@ -1,0 +1,11 @@
+lieferant_id,lieferant_name
+L-001,SYNTHETISCH Nord Komponenten
+L-002,SYNTHETISCH Sued Bauteile
+L-DUP,SYNTHETISCH Doppelter Lieferant A
+L-DUP,SYNTHETISCH Doppelter Lieferant B
+001,SYNTHETISCH Textschluessel 001
+1,SYNTHETISCH Textschluessel 1
+0,SYNTHETISCH Textschluessel 0
+false,SYNTHETISCH Textschluessel false
+__proto__,SYNTHETISCH Auffaelliger Textschluessel
+,SYNTHETISCH Lieferant ohne Identitaet

@@ -1,0 +1,12 @@
+KoiForge is available through the ClusterIP Service {{ include "koiforge.fullname" . }}.
+
+{{- if .Values.ingress.enabled }}
+Public URL: {{ .Values.publicOrigin }}
+{{- else }}
+No Ingress was created. Connect an HTTPS reverse proxy to Service
+{{ include "koiforge.fullname" . }}:{{ .Values.service.port }} and preserve the exact origin
+{{ .Values.publicOrigin }}.
+{{- end }}
+
+This release intentionally runs one replica with Recreate strategy and one PVC.
+Local Codex generation is disabled in the cluster image.

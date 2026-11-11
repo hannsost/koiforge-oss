@@ -1,0 +1,35 @@
+{
+  "name": "koiforge",
+  "private": true,
+  "packageManager": "pnpm@10.18.3",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "scripts": {
+    "dev:linux": "node scripts/dev-linux.mjs",
+    "start:local": "node scripts/dev-linux.mjs --built",
+    "state": "node scripts/state.mjs",
+    "build": "turbo run build",
+    "dev": "turbo run dev --parallel",
+    "test": "turbo run test",
+    "typecheck": "turbo run typecheck",
+    "lint": "turbo run lint",
+    "api:dev": "pnpm --filter @koiforge/control-plane-api dev",
+    "web:dev": "pnpm --filter @koiforge/console-web dev",
+    "dev:start": "powershell.exe -ExecutionPolicy Bypass -File scripts/start-dev.ps1",
+    "dev:stop": "powershell.exe -ExecutionPolicy Bypass -File scripts/stop-dev.ps1",
+    "smoke": "powershell.exe -ExecutionPolicy Bypass -File scripts/smoke-test.ps1",
+    "e2e": "powershell.exe -ExecutionPolicy Bypass -File scripts/run-e2e.ps1",
+    "e2e:list": "pnpm --filter @koiforge/e2e-tests run test -- --list",
+    "open-data:fetch": "powershell.exe -ExecutionPolicy Bypass -File scripts/fetch-open-datasets.ps1",
+    "open-data:bootstrap": "powershell.exe -ExecutionPolicy Bypass -File scripts/bootstrap-open-datasets.ps1",
+    "resilience:run": "powershell.exe -ExecutionPolicy Bypass -File scripts/run-resilience.ps1",
+    "resilience:list": "pnpm --filter @koiforge/resilience-lab run list",
+    "resilience:triage": "pnpm --filter @koiforge/resilience-lab run run -- --triage"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.21",
+    "turbo": "^2.5.8",
+    "typescript": "^5.8.3"
+  }
+}

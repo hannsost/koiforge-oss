@@ -1,0 +1,14 @@
+{
+  "id": "procurement-core-pack",
+  "name": "Procurement Core",
+  "description": "Kernobjekte für Procurement-Prozesse: Lieferanten, Bestellungen, Risikowerte und Workflow-Actions. Referenzimplementierung für domänenspezifische Legacy-Apps.",
+  "category": "legacy",
+  "icon": "🏭",
+  "version": "1.0.0",
+  "author": "KOIForge Contributors",
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/koiforge/koiforge",
+  "tags": ["procurement", "supplier", "orders", "workflow"],
+  "moduleFile": "module.yaml",
+  "requires": ["platform-core"]
+}

@@ -1,0 +1,52 @@
+id: platform-core
+version: 1.0.0
+name: Platform Core
+description: Generic platform objects and capabilities. Ships as a demo module — not domain-specific.
+trust-level: native
+
+requires:
+  core: ">=0.1.0 <1.0.0"
+  ontology-contracts: []
+
+capabilities:
+  - object-query
+  - ui-slots/object-detail-sidebar
+
+contributes:
+  objects:
+    - name: platform-event
+      contract-version: 1
+      namespace: platform
+      properties:
+        - name: eventId
+          type: string
+          required: true
+        - name: eventType
+          type: string
+        - name: source
+          type: string
+        - name: severity
+          type: string
+        - name: message
+          type: string
+        - name: timestamp
+          type: datetime
+    - name: platform-metric
+      contract-version: 1
+      namespace: platform
+      properties:
+        - name: metricId
+          type: string
+          required: true
+        - name: name
+          type: string
+        - name: value
+          type: number
+        - name: unit
+          type: string
+        - name: timestamp
+          type: datetime
+
+migrations:
+  - from: "0.0.1"
+    strategy: additive

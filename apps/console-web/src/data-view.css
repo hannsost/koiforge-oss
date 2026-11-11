@@ -1,0 +1,22 @@
+.kf-data-view .kf-card-heading h2 {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.kf-data-view .kf-card-heading > div {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.kf-data-view .kf-card-heading .kf-badge {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.kf-data-view .kf-card-heading .kf-badge > span {
+  display: block;
+  max-width: 220px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

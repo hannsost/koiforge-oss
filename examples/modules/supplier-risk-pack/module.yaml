@@ -1,0 +1,41 @@
+id: supplier-risk-pack
+version: 1.0.0
+name: Supplier Risk Pack
+description: Erweitert Supplier-Objekte um Risikoindikatoren und UI-Beiträge.
+trust-level: sandboxed
+
+requires:
+  core: ">=0.1.0 <1.0.0"
+  ontology-contracts:
+    - supplier@^1
+    - procurement-order@^3
+
+capabilities:
+  - object-query
+  - ui-slots/object-detail-sidebar
+
+contributes:
+  extends:
+    - object: supplier@^1
+      properties:
+        - name: riskBand
+          type: string
+          computed: true
+        - name: leadTimeVariance
+          type: number
+          computed: true
+  ui:
+    - slot: object-detail-sidebar@1
+      component: SupplierRiskPanel
+      lazy: true
+  policies:
+    - type: row-level
+      condition: "currentUser.dept == object.ownerDept"
+
+migrations:
+  - from: "0.9.0"
+    strategy: additive
+
+compatibility-tests:
+  - procurement-core-pack@^1
+

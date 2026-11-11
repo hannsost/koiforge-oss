@@ -1,0 +1,35 @@
+{
+  "name": "@koiforge/control-plane-api",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/index.js",
+    "test": "node --import tsx --test test/*.test.ts",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@fastify/cors": "^11.1.0",
+    "@fastify/multipart": "^9.4.0",
+    "@koiforge/aip-core": "workspace:*",
+    "@koiforge/asset-lineage-core": "workspace:*",
+    "@koiforge/checks-core": "workspace:*",
+    "@koiforge/config-core": "workspace:*",
+    "@koiforge/data-registry": "workspace:*",
+    "@koiforge/pipeline-core": "workspace:*",
+    "@koiforge/identity-linking-core": "workspace:*",
+    "@koiforge/module-manifest": "workspace:*",
+    "@koiforge/module-system": "workspace:*",
+    "@koiforge/ontology-core": "workspace:*",
+    "@koiforge/saved-view-core": "workspace:*",
+    "@koiforge/security-core": "workspace:*",
+    "@koiforge/semantic-crosswalk-core": "workspace:*",
+    "@koiforge/semantic-discovery-core": "workspace:*",
+    "fastify": "^5.6.1"
+  },
+  "devDependencies": {
+    "tsx": "^4.20.6"
+  }
+}

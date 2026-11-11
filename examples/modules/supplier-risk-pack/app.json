@@ -1,0 +1,14 @@
+{
+  "id": "supplier-risk-pack",
+  "name": "Supplier Risk Pack",
+  "description": "Erweiterungspaket für Procurement: automatische Risikoberechnung, Lieferantenbewertung und ESG-Scoring. Setzt Procurement Core voraus.",
+  "category": "legacy",
+  "icon": "⚠️",
+  "version": "1.0.0",
+  "author": "KOIForge Contributors",
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/koiforge/koiforge",
+  "tags": ["procurement", "risk", "scoring", "esg"],
+  "moduleFile": "module.yaml",
+  "requires": ["procurement-core-pack"]
+}

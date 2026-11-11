@@ -1,0 +1,64 @@
+id: procurement-core-pack
+version: 1.0.0
+name: Procurement Core Pack
+description: Kernobjekte und Actions für Procurement-Prozesse.
+trust-level: native
+
+requires:
+  core: ">=0.1.0 <1.0.0"
+  ontology-contracts: []
+
+capabilities:
+  - object-query
+  - action-engine
+  - ui-slots/object-detail-sidebar
+
+contributes:
+  objects:
+    - name: supplier
+      contract-version: 1
+      namespace: procurement
+      properties:
+        - name: name
+          type: string
+          required: true
+        - name: status
+          type: string
+        - name: riskScore
+          type: number
+          computed: true
+    - name: procurement-order
+      contract-version: 3
+      namespace: procurement
+      properties:
+        - name: poNumber
+          type: string
+          required: true
+        - name: value
+          type: number
+        - name: status
+          type: string
+  actions:
+    - name: approve-order
+      contract-version: 1
+      input: procurement-order@^3
+      permissions:
+        - procurement.order.approve
+      side-effects:
+        - ontology-update
+        - workflow
+  ui:
+    - slot: object-detail-sidebar@1
+      component: ProcurementOrderSidebar
+      lazy: true
+  policies:
+    - type: object-level
+      condition: "currentUser.tenantId == object.tenantId"
+
+migrations:
+  - from: "0.9.0"
+    strategy: additive
+
+compatibility-tests:
+  - supplier-risk-pack@^1
+

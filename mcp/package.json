@@ -1,0 +1,12 @@
+{
+  "name": "@koiforge/mcp",
+  "version": "0.1.0",
+  "description": "Model Context Protocol (MCP) server for KoiForge",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "bin": { "koiforge-mcp": "src/server.mjs" },
+  "files": ["src"],
+  "engines": { "node": ">=20" },
+  "scripts": { "start": "node src/server.mjs", "test": "node --test test/*.test.mjs" }
+}

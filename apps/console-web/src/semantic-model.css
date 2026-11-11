@@ -1,0 +1,54 @@
+.kf-semantic { min-width: 0; color: var(--nf-ink); }
+.kf-semantic *, .kf-semantic *::before, .kf-semantic *::after { box-sizing: border-box; }
+.kf-semantic p, .kf-semantic dd, .kf-semantic li, .kf-semantic code, .kf-semantic h3, .kf-semantic h4 { overflow-wrap: anywhere; }
+.kf-semantic-toolbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 20px; }
+.kf-semantic-toolbar p { max-width: 760px; color: var(--nf-muted); }
+.kf-semantic-tabs { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 22px; }
+.kf-semantic-tabs button { padding: 10px 16px; border: 1px solid var(--nf-line); background: var(--nf-surface); color: var(--nf-ink); }
+.kf-semantic-tabs button[aria-pressed="true"] { border-color: rgb(var(--brand-rgb)); background: #edf5f0; color: rgb(var(--brand-rgb)); }
+.kf-semantic-layout { display: grid; grid-template-columns: minmax(220px, .72fr) minmax(0, 2fr); align-items: start; gap: 22px; }
+.kf-semantic-layout > *, .kf-semantic-workspace > *, .kf-semantic-stack > *, .kf-semantic-fields > * { min-width: 0; }
+.kf-semantic-workspace, .kf-semantic-stack { display: flex; min-width: 0; flex-direction: column; gap: 18px; }
+.kf-semantic h3, .kf-semantic h4 { font-size: var(--nf-text-control); font-weight: var(--nf-weight-control); }
+.kf-semantic .kf-semantic-name { font-size: var(--nf-text-section); line-height: var(--nf-leading-section); }
+.kf-semantic-muted { color: var(--nf-muted); font-size: var(--nf-text-caption); line-height: var(--nf-leading-caption); }
+.kf-semantic-fields { display: grid; min-width: 0; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; padding: 0; margin: 0; border: 0; }
+.kf-semantic-field { display: flex; flex-direction: column; gap: 7px; min-width: 0; font-size: var(--nf-text-label); font-weight: var(--nf-weight-label); }
+.kf-semantic-field input, .kf-semantic-field select { min-width: 0; max-width: 100%; font-size: 16px; font-weight: var(--nf-weight-body); }
+.kf-semantic-check { display: flex; grid-column: 1 / -1; align-items: flex-start; gap: 10px; padding: 14px; border: 1px solid var(--nf-line); border-radius: 8px; background: var(--nf-soft); }
+.kf-semantic-check input { flex: 0 0 18px; margin-top: 3px; }
+.kf-semantic-primary { display: inline-flex; min-height: 44px; align-items: center; justify-content: center; padding: 10px 16px; border: 1px solid rgb(var(--brand-rgb)); border-radius: 8px; color: #fff; background: rgb(var(--brand-rgb)); font-size: var(--nf-text-control); font-weight: var(--nf-weight-control); text-align: center; text-decoration: none; }
+.kf-semantic-primary:hover:not(:disabled) { background: rgb(var(--brand-deep)); }
+.kf-semantic button:disabled { opacity: .55; cursor: not-allowed; }
+.kf-semantic-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.kf-semantic-alert, .kf-semantic-binding { padding: 14px; border: 1px solid var(--nf-line); border-radius: 8px; background: var(--nf-soft); }
+.kf-semantic-binding { grid-column: 1 / -1; }
+.kf-semantic-error { color: #9c332a; }
+.kf-semantic-alert a, .kf-semantic-facts a, .kf-semantic-details h4 a { color: rgb(var(--brand-rgb)); text-decoration: underline; text-underline-offset: 3px; }
+.kf-semantic-list { display: flex; flex-direction: column; gap: 10px; margin: 18px 0 0; padding: 0; list-style: none; }
+.kf-semantic-list button { display: flex; width: 100%; min-width: 0; flex-direction: column; align-items: flex-start; gap: 6px; padding: 12px; border: 1px solid var(--nf-line); border-radius: 8px; background: var(--nf-surface); text-align: left; }
+.kf-semantic-list button[aria-current="page"], .kf-semantic-list button:hover { border-color: rgb(var(--brand-rgb) / .5); background: #edf5f0; }
+.kf-semantic-list strong, .kf-semantic-list span, .kf-semantic-list small { max-width: 100%; overflow-wrap: anywhere; }
+.kf-semantic-list span, .kf-semantic-list small { font-size: var(--nf-text-caption); color: var(--nf-muted); }
+.kf-semantic-counts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.kf-semantic-counts > div { padding: 12px; border-radius: 8px; background: var(--nf-soft); }
+.kf-semantic-counts dt { color: var(--nf-muted); font-size: var(--nf-text-caption); line-height: var(--nf-leading-caption); }
+.kf-semantic-counts dd { margin: 6px 0 0; font-size: 22px; font-weight: var(--nf-weight-control); font-variant-numeric: tabular-nums; }
+.kf-semantic-facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 22px; }
+.kf-semantic-facts dt { margin-bottom: 4px; color: var(--nf-muted); font-size: var(--nf-text-caption); }
+.kf-semantic-facts dd { margin: 0; }
+.kf-semantic code { font-size: var(--nf-text-caption); }
+.kf-semantic-details { padding: 12px 14px; border: 1px solid var(--nf-line); border-radius: 8px; }
+.kf-semantic-details summary { min-height: 28px; font-weight: var(--nf-weight-control); }
+.kf-semantic-details > dl, .kf-semantic-details > div { margin-top: 16px; }
+.kf-semantic-table { max-width: 100%; max-height: 520px; overflow: auto; border: 1px solid var(--nf-line); border-radius: 8px; }
+.kf-semantic-table table { width: 100%; border-collapse: collapse; font-size: var(--nf-text-label); }
+.kf-semantic-table th, .kf-semantic-table td { min-width: 120px; max-width: 300px; padding: 10px 12px; border-bottom: 1px solid var(--nf-line); text-align: left; vertical-align: top; overflow-wrap: anywhere; }
+.kf-semantic-table th { position: sticky; z-index: 1; top: 0; background: var(--nf-soft); font-weight: var(--nf-weight-control); }
+.kf-semantic-table > p { padding: 16px; }
+.kf-semantic-identity-value { display: flex; flex-direction: column; gap: 3px; }
+.kf-semantic-identity-value small { color: var(--nf-muted); font-size: var(--nf-text-caption); }
+.kf-semantic-pagination { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; }
+.kf-semantic-pagination span { color: var(--nf-muted); font-size: var(--nf-text-caption); }
+@media (max-width: 1100px) { .kf-semantic-layout { grid-template-columns: minmax(0, 1fr); } .kf-semantic-layout > aside { order: 2; } .kf-semantic-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .kf-semantic-fields, .kf-semantic-facts, .kf-semantic-list { grid-template-columns: minmax(0, 1fr); } .kf-semantic-counts { grid-template-columns: repeat(2, minmax(0, 1fr)); } .kf-semantic-actions > button, .kf-semantic-primary { width: 100%; } .kf-semantic .kf-card-content, .kf-semantic .kf-card-heading { padding: 16px; } }

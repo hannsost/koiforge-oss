@@ -1,0 +1,41 @@
+stages: [test]
+
+build:
+  stage: test
+  image: node:22
+  cache:
+    key: pnpm
+    paths: [.pnpm-store/]
+  before_script:
+    - corepack enable
+    - pnpm config set store-dir .pnpm-store
+  script:
+    - pnpm install --frozen-lockfile
+    - pnpm build
+    - pnpm typecheck
+
+test:
+  stage: test
+  image: node:22
+  allow_failure: true   # isolation tests need bubblewrap + systemd user session
+  before_script:
+    - corepack enable
+  script:
+    - pnpm install --frozen-lockfile
+    - pnpm build
+    - pnpm test
+
+mcp:
+  stage: test
+  image: node:22
+  script:
+    - cd mcp
+    - npm test
+
+secret_detection:
+  stage: test
+  image:
+    name: zricethezav/gitleaks:latest
+    entrypoint: [""]
+  script:
+    - gitleaks dir . --no-banner --redact

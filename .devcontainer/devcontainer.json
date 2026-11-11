@@ -1,0 +1,29 @@
+{
+  "name": "KoiForge remote development",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".",
+    "args": {
+      "PNPM_VERSION": "10.18.3"
+    }
+  },
+  "workspaceFolder": "/workspaces/koiforge",
+  "containerUser": "node",
+  "remoteUser": "node",
+  "containerEnv": {
+    "KOIFORGE_STATE_ROOT": "/var/lib/koiforge-state",
+    "KOIFORGE_IMPORT_DATA_ROOT": "/var/lib/koiforge-state"
+  },
+  "mounts": [
+    "source=koiforge-${devcontainerId}-state,target=/var/lib/koiforge-state,type=volume"
+  ],
+  "forwardPorts": [5173],
+  "portsAttributes": {
+    "5173": {
+      "label": "KoiForge UI",
+      "protocol": "http",
+      "onAutoForward": "openBrowser"
+    }
+  },
+  "shutdownAction": "stopContainer"
+}
